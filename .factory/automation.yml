@@ -15,6 +15,7 @@ build:
       image: typedb-ubuntu-22.04
       machine: 16-core-64-gb
       command: |
+        sleep 7200
         tool/postgres/install-driver.sh
         tool/postgres/install-server.sh
         tool/postgres/start-server.sh
