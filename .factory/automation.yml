@@ -11,6 +11,14 @@ config:
 
 build:
   correctness:
+    benchmark-tpcc-typedb-verification:
+      image: typedb-ubuntu-22.04
+      machine: 16-core-64-gb
+      command: |
+        tool/install-typedb-driver.sh
+        tool/start-typedb-core.sh
+        tool/execute-tpcc.sh --scalefactor=100 --warehouses=4 typedb3 --verify
+        tool/stop-typedb-core.sh
     benchmark-tpcc-typedb:
       image: typedb-ubuntu-22.04
       machine: 16-core-64-gb
