@@ -21,6 +21,7 @@ build:
         tool/postgres/start-server.sh
         tool/install-typedb-driver.sh
         tool/start-typedb-core.sh
+        sleep 7200
         # tool/execute-tpcc.sh --scalefactor=100 --warehouses=4 typedb3 --verify
         tool/stop-typedb-core.sh
         tool/postgres/stop-server.sh
